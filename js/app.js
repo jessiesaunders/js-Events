@@ -71,7 +71,7 @@ function redFace(){
 
 function showPrice(){
 	var addPrice = document.getElementById("price");
-	addPrice.innerHTML = "5.55";
+	addPrice.innerHTML = "$5.55";
 }
 
 //7. Mr. Buttons
@@ -79,8 +79,10 @@ function showPrice(){
 
 var myQuote = "Our lives are defined by opportunities; even the ones we miss.";
 
-var showText = document.getElementById("Benjamin");
-showText.addEventListener("click", showQuote);
+//var showText = document.getElementById("Benjamin");
+//showText.addEventListener("click", showQuote);
+
+Benjamin.addEventListener("click", showQuote);
 
 function showQuote(){
 	var displayQuote = document.getElementById("displayQuote");
@@ -96,14 +98,25 @@ var changeQuote = document.getElementById("random");
 changeQuote.addEventListener("click", randomQuote);
 
 function randomQuote(){
-	for (var i = 0; i < quotes.length; i++){
-		var findQuote = document.createElement("div");
+	//for (var i = 0; i < quotes.length; i++){
+		//var findQuote = document.createElement("div");
 		//changeQuote.innerHTML = quotes[i];
-		changeQuote.innerHTML = quotes[(Math.floor(Math.random()*quotes.length))];
-		findQuote.appendChild(findQuote);
-	}
+		var pickOne = Math.floor(Math.random()*quotes.length);
+		displayQuotes.innerHTML = quotes[pickOne];
+		//findQuote.appendChild(findQuote);
+	//}
 }
 
 //9. Unlock the Secret to Financial Freedom
 /*Create an event listener that will show and hide the message when clicking on the button.
 */
+
+showHide.addEventListener("click", dollaBilz);
+
+function dollaBilz(){
+	//var pElem = document.getElementById("showmoney");
+	if(showmoney.style.display === "none"){
+		showmoney.style.display = "block";
+	} else {showmoney.style.displayQuote = "none";
+	}
+}
